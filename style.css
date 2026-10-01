@@ -1671,8 +1671,8 @@ footer {
 
 .about-placeholder p {
     font-family: var(--mono);
-    font-size: 10px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.5;
     color: var(--muted);
 }
 
@@ -1722,220 +1722,197 @@ footer {
 }
 
 /* ==================================================
-   EYECANDY PAGE
+   EYECANDY PAGE — OVERRIDE OLD HOMEPAGE STYLES
 ================================================== */
 
+
+/* PAGE */
+
 .eyecandy-page {
-
     width: min(1100px, 88%);
-
     margin: 0 auto;
-
     padding: 60px 0 100px;
-
 }
 
 
-/* ==================================================
-   BACK LINK
-================================================== */
+/* BACK */
 
-.back-link {
-
+.eyecandy-page .back-link {
     display: inline-block;
 
-    font-family: "IBM Plex Mono", monospace;
-
+    font-family: var(--mono);
     font-size: 14px;
 
     color: inherit;
-
     text-decoration: none;
 
     border-bottom: 1px solid currentColor;
 
     margin-bottom: 80px;
-
-    transition: opacity 0.2s ease;
-
 }
 
-
-.back-link:hover {
-
+.eyecandy-page .back-link:hover {
     opacity: 0.55;
-
 }
 
 
-/* ==================================================
-   HEADER
-================================================== */
+/* HEADER */
 
-.eyecandy-header {
-
+.eyecandy-page .eyecandy-header {
     max-width: 720px;
-
     margin-bottom: 100px;
-
 }
 
-
-.eyecandy-label {
-
-    font-family: "IBM Plex Mono", monospace;
-
+.eyecandy-page .eyecandy-label {
+    font-family: var(--mono);
     font-size: 13px;
-
     margin: 0 0 18px;
-
 }
 
-
-.eyecandy-header h1 {
-
-    font-family: "Archivo Black", sans-serif;
+.eyecandy-page .eyecandy-header h1 {
+    font-family: var(--heading);
 
     font-size: clamp(64px, 10vw, 120px);
 
     line-height: 0.88;
-
     letter-spacing: -0.04em;
 
     margin: 0 0 30px;
-
 }
 
-
-.eyecandy-intro {
-
+.eyecandy-page .eyecandy-intro {
     max-width: 540px;
 
-    font-family: "IBM Plex Sans", sans-serif;
-
+    font-family: var(--body);
     font-size: 18px;
-
     line-height: 1.55;
 
     margin: 0 0 28px;
-
 }
 
 
-/* ==================================================
-   EYECANDY ROBOTICS CREDIT
-================================================== */
+/* EYECANDY ROBOTICS CREDIT */
 
-.eyecandy-credit {
-
-    font-family: "IBM Plex Mono", monospace;
-
+.eyecandy-page .eyecandy-credit {
+    font-family: var(--mono);
     font-size: 13px;
-
     line-height: 1.5;
 
     margin: 0;
-
     padding-left: 14px;
 
     border-left: 2px solid currentColor;
-
 }
 
-
-.eyecandy-credit a {
-
+.eyecandy-page .eyecandy-credit a {
     color: inherit;
 
     text-decoration: none;
 
     border-bottom: 1px solid currentColor;
-
-    transition:
-        opacity 0.2s ease;
-
 }
 
-
-.eyecandy-credit a:hover {
-
+.eyecandy-page .eyecandy-credit a:hover {
     opacity: 0.55;
-
 }
 
 
 /* ==================================================
-   IMAGE GRID
+   IMAGE GALLERY
 ================================================== */
 
-.eyecandy-grid {
+/*
+   IMPORTANT:
+   Reset the old homepage Eyecandy collage styles.
+*/
+
+.eyecandy-page .eyecandy-grid {
+
+    position: static;
+
+    width: 100%;
+    max-width: none;
+
+    min-height: 0;
+
+    margin: 0 0 140px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
     gap: 75px 50px;
-
-    margin-bottom: 140px;
-
 }
 
 
-.eyecandy-item {
+/* Reset old absolute-positioned figures */
+
+.eyecandy-page .eyecandy-item {
+
+    position: static;
+
+    width: auto;
+    height: auto;
 
     margin: 0;
+    padding: 0;
 
+    background: none;
+
+    box-shadow: none;
+
+    transform: none;
 }
 
 
 /* Wide image */
 
-.eyecandy-item.wide {
-
+.eyecandy-page .eyecandy-item.wide {
     grid-column: 1 / -1;
-
 }
 
 
 /* Image wrapper */
 
-.eyecandy-image-wrap {
+.eyecandy-page .eyecandy-image-wrap {
 
     width: 100%;
 
     overflow: hidden;
 
+    background: transparent;
 }
 
 
 /* Images */
 
-.eyecandy-item img {
+.eyecandy-page .eyecandy-item img {
 
     display: block;
 
     width: 100%;
-
     height: auto;
 
-    transition:
-        transform 0.35s ease;
+    max-height: none;
 
+    object-fit: contain;
+
+    filter: none;
+
+    transform: none;
 }
 
 
-/* Small hover movement */
+/* Hover */
 
-.eyecandy-item:hover img {
-
+.eyecandy-page .eyecandy-item:hover img {
     transform: scale(1.015);
-
 }
 
 
 /* Captions */
 
-.eyecandy-item figcaption {
+.eyecandy-page .eyecandy-item figcaption {
 
     display: flex;
 
@@ -1945,34 +1922,33 @@ footer {
 
     margin-top: 13px;
 
-    font-family: "IBM Plex Mono", monospace;
+    padding: 0;
+
+    font-family: var(--mono);
 
     font-size: 13px;
 
+    color: var(--ink);
 }
 
 
-/* Numbers */
-
-.eyecandy-number {
-
+.eyecandy-page .eyecandy-number {
     opacity: 0.45;
-
 }
 
 
 /* ==================================================
-   VIDEO SECTION
+   VIDEOS
 ================================================== */
 
-.eyecandy-videos {
+.eyecandy-page .eyecandy-videos {
+    width: 100%;
 
     margin-bottom: 140px;
-
 }
 
 
-.eyecandy-section-heading {
+.eyecandy-page .eyecandy-section-heading {
 
     display: flex;
 
@@ -1981,42 +1957,37 @@ footer {
     gap: 30px;
 
     margin-bottom: 55px;
-
 }
 
 
-.eyecandy-section-heading .eyecandy-label {
-
+.eyecandy-page .eyecandy-section-heading .eyecandy-label {
     margin: 0;
-
 }
 
 
-.eyecandy-section-note {
+.eyecandy-page .eyecandy-section-note {
 
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: var(--body);
 
     font-size: 15px;
 
     margin: 0;
 
     opacity: 0.7;
-
 }
 
 
-/* ==================================================
-   VIDEO BLOCK
-================================================== */
+/* Video */
 
-.video-block {
+.eyecandy-page .video-block {
 
-    margin-bottom: 80px;
+    width: 100%;
 
+    margin: 0 0 80px;
 }
 
 
-.video-block video {
+.eyecandy-page .video-block video {
 
     display: block;
 
@@ -2026,12 +1997,19 @@ footer {
 
     height: auto;
 
+    max-height: none;
+
+    object-fit: contain;
+
+    border: 0;
+
+    background: transparent;
 }
 
 
 /* Video caption */
 
-.video-meta {
+.eyecandy-page .video-meta {
 
     display: flex;
 
@@ -2041,17 +2019,14 @@ footer {
 
     margin-top: 13px;
 
-    font-family: "IBM Plex Mono", monospace;
+    font-family: var(--mono);
 
     font-size: 13px;
-
 }
 
 
-.video-number {
-
+.eyecandy-page .video-number {
     opacity: 0.45;
-
 }
 
 
@@ -2059,7 +2034,9 @@ footer {
    FOOTER
 ================================================== */
 
-.eyecandy-footer {
+.eyecandy-page .eyecandy-footer {
+
+    width: 100%;
 
     display: flex;
 
@@ -2071,28 +2048,24 @@ footer {
 
     border-top: 1px solid currentColor;
 
-    font-family: "IBM Plex Mono", monospace;
+    font-family: var(--mono);
 
     font-size: 13px;
-
 }
 
 
-.eyecandy-footer p {
-
+.eyecandy-page .eyecandy-footer p {
     margin: 0;
-
 }
 
 
-.eyecandy-footer a {
+.eyecandy-page .eyecandy-footer a {
 
     color: inherit;
 
     text-decoration: none;
 
     border-bottom: 1px solid currentColor;
-
 }
 
 
@@ -2102,98 +2075,75 @@ footer {
 
 @media (max-width: 700px) {
 
-
     .eyecandy-page {
-
         width: 88%;
-
         padding-top: 35px;
-
     }
 
 
-    .back-link {
-
+    .eyecandy-page .back-link {
         margin-bottom: 55px;
-
     }
 
 
-    .eyecandy-header {
-
+    .eyecandy-page .eyecandy-header {
         margin-bottom: 70px;
-
     }
 
 
-    .eyecandy-header h1 {
-
+    .eyecandy-page .eyecandy-header h1 {
         font-size: 64px;
-
     }
 
 
-    .eyecandy-intro {
-
+    .eyecandy-page .eyecandy-intro {
         font-size: 16px;
-
     }
 
 
-    .eyecandy-grid {
+    .eyecandy-page .eyecandy-grid {
 
         grid-template-columns: 1fr;
 
         gap: 55px;
 
         margin-bottom: 100px;
-
     }
 
 
-    .eyecandy-item.wide {
-
+    .eyecandy-page .eyecandy-item.wide {
         grid-column: auto;
-
     }
 
 
-    .eyecandy-section-heading {
+    .eyecandy-page .eyecandy-section-heading {
 
         display: block;
 
         margin-bottom: 40px;
-
     }
 
 
-    .eyecandy-section-note {
-
+    .eyecandy-page .eyecandy-section-note {
         margin-top: 15px;
-
     }
 
 
-    .video-block {
-
+    .eyecandy-page .video-block {
         margin-bottom: 60px;
-
     }
 
 
-    .eyecandy-footer {
-
+    .eyecandy-page .eyecandy-footer {
         display: block;
-
     }
 
 
-    .eyecandy-footer a {
+    .eyecandy-page .eyecandy-footer a {
 
         display: inline-block;
 
         margin-top: 15px;
-
     }
 
 }
