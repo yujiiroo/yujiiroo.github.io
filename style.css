@@ -1,0 +1,2200 @@
+:root {
+
+    --paper: #f3efdf;
+    --paper-dark: #e9e3cf;
+
+    --ink: #24231f;
+    --muted: #77736a;
+
+    --blue-line: rgba(76, 116, 150, 0.18);
+
+    --red: rgba(180, 65, 55, 0.55);
+
+    --yellow: #f4d75e;
+    --pink: #e8a7a2;
+
+    --heading: "Archivo Black", sans-serif;
+    --body: "IBM Plex Sans", sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: #d8d3c3;
+
+    color: var(--ink);
+
+    font-family: var(--body);
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.page {
+
+    position: relative;
+
+    width: min(1400px, 100%);
+
+    margin: 0 auto;
+
+    min-height: 100vh;
+
+    background-color: var(--paper);
+
+    background-image:
+        linear-gradient(
+            var(--blue-line) 1px,
+            transparent 1px
+        );
+
+    background-size: 100% 31px;
+
+    overflow: hidden;
+}
+
+
+/* red notebook margin */
+
+.red-margin {
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 10%;
+
+    width: 1px;
+
+    background: var(--red);
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* ==================================================
+   SHARED
+================================================== */
+
+header,
+section,
+footer {
+
+    width: min(1100px, 82%);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.top-line,
+.section-heading,
+.tiny-label,
+.entry-number,
+.image-note,
+.media-label,
+.todo-item small,
+.footer-left span {
+
+    font-family: var(--mono);
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+.section-heading .line {
+
+    height: 1px;
+
+    flex: 1;
+
+    background: rgba(50, 48, 42, 0.25);
+}
+
+
+.tiny-label {
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding-top: 25px;
+
+    border-bottom: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+.top-line {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    letter-spacing: 0.05em;
+}
+
+
+.hero-layout {
+
+    position: relative;
+
+    height: calc(100vh - 60px);
+
+    min-height: 650px;
+}
+
+
+/* ==================================================
+   HERO ROBOT
+================================================== */
+
+.hero-robot {
+
+    position: absolute;
+
+    top: 5%;
+
+    left: 0;
+
+    width: 46%;
+
+    transform: rotate(-2deg);
+}
+
+
+.hero-robot .so100-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    /*
+       Useful if the sketch has a white background.
+       It lets the notebook paper show through.
+    */
+
+    mix-blend-mode: multiply;
+}
+
+
+/* ================= HERO MASCOT ================= */
+
+.mascot {
+
+    position: relative;
+
+    width: 150px;
+
+    margin-top: -20px;
+
+    margin-left: 40px;
+
+    transform: rotate(-3deg);
+
+    cursor: default;
+}
+
+
+.mascot img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    mix-blend-mode: multiply;
+}
+
+
+.mascot span {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 8px;
+
+    transform: translateX(-50%) rotate(3deg);
+
+    padding: 5px 9px;
+
+    background: var(--yellow);
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    color: var(--ink);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+
+.mascot:hover span {
+
+    opacity: 1;
+
+    transform: translateX(-50%) rotate(3deg) translateY(-5px);
+}
+
+
+.image-note {
+
+    position: absolute;
+
+    bottom: 1%;
+
+    right: 4%;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    transform: rotate(-4deg);
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+.hero-name {
+
+    position: absolute;
+
+    top: 7%;
+
+    right: 0;
+
+    text-align: right;
+}
+
+
+.hero-name h1 {
+
+    font-family: var(--heading);
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.86;
+
+    letter-spacing: -0.07em;
+
+    font-weight: 400;
+}
+
+
+.hero-name p {
+
+    margin-top: 20px;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   HERO STATEMENT
+================================================== */
+
+.hero-statement {
+
+    position: absolute;
+
+    left: 48%;
+
+    bottom: 13%;
+
+    max-width: 650px;
+
+    width: 46%;
+}
+
+
+.statement {
+
+    position: relative;
+
+    font-family: var(--heading);
+
+    font-size: clamp(36px, 4.2vw, 62px);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 400;
+}
+
+
+/* yellow marker */
+
+.statement::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -2%;
+
+    right: 5%;
+
+    bottom: -12px;
+
+    height: 13px;
+
+    background: var(--yellow);
+
+    opacity: 0.65;
+
+    transform: rotate(-1deg);
+
+    z-index: -1;
+}
+
+
+.statement-note {
+
+    margin-top: 25px;
+
+    margin-left: 70%;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    transform: rotate(2deg);
+}
+
+
+/* ABOUT PLACEHOLDER */
+
+.about-placeholder {
+
+    width: min(430px, 100%);
+
+    margin-top: 45px;
+
+    margin-left: auto;
+
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(50, 48, 42, 0.25);
+}
+
+
+.about-placeholder p {
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* EYECANDY LINK */
+
+.eyecandy-link {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 35px auto 0;
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    color: var(--ink);
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--ink);
+
+    padding-bottom: 3px;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+
+.eyecandy-link:hover {
+
+    opacity: 0.55;
+
+    transform: translateY(-2px);
+}
+
+
+.hero-scroll {
+
+    position: absolute;
+
+    bottom: 5%;
+
+    left: 0;
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   CURRENTLY
+================================================== */
+
+.currently {
+
+    padding-top: 120px;
+
+    padding-bottom: 140px;
+}
+
+
+.currently-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    margin-top: 70px;
+}
+
+
+.currently h2 {
+
+    margin-top: 25px;
+
+    font-family: var(--heading);
+
+    font-size: clamp(65px, 8vw, 110px);
+
+    line-height: 0.85;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 400;
+}
+
+
+.side-note {
+
+    margin-top: 35px;
+
+    max-width: 320px;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   CURRENT NOTE
+================================================== */
+
+.current-note {
+
+    position: relative;
+
+    padding: 45px 35px 35px;
+
+    min-height: 340px;
+
+    background: var(--pink);
+
+    box-shadow:
+        4px 7px 0 rgba(0, 0, 0, 0.08);
+
+    transform: rotate(2deg);
+}
+
+
+.tape {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 28px;
+
+    top: -15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-3deg);
+
+    background: rgba(239, 223, 174, 0.75);
+}
+
+
+.note-title {
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    margin-bottom: 25px;
+}
+
+
+.current-note ul {
+
+    list-style: none;
+
+    font-family: var(--heading);
+
+    font-size: 20px;
+
+    line-height: 1.65;
+}
+
+
+.current-note li::before {
+
+    content: "→ ";
+
+    font-family: var(--mono);
+
+    font-size: 12px;
+}
+
+
+.note-bottom {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   NOTEBOOK
+================================================== */
+
+.notebook {
+
+    padding-top: 110px;
+
+    padding-bottom: 120px;
+
+    border-top: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+.entry {
+
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 50px;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 70px 0;
+
+    border-bottom: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+.entry-number {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+.entry-number strong {
+
+    font-size: 17px;
+
+    color: var(--ink);
+}
+
+
+.entry-content {
+
+    max-width: 700px;
+}
+
+
+.entry-content h3 {
+
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+
+    font-family: var(--heading);
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 400;
+}
+
+
+.entry-content > p:not(.tiny-label):not(.hand-note) {
+
+    max-width: 620px;
+
+    margin-bottom: 12px;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+    color: #555149;
+}
+
+
+.hand-note {
+
+    margin-top: 25px;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    color: #5d5142;
+
+    transform: rotate(-1deg);
+}
+
+
+/* ==================================================
+   EYECANDY
+================================================== */
+
+.eyecandy {
+
+    padding-top: 130px;
+
+    padding-bottom: 150px;
+
+    border-top: 1px solid rgba(50, 48, 42, 0.18);
+
+    border-bottom: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+/* IMAGE COLLAGE */
+
+.eyecandy-grid {
+
+    position: relative;
+
+    width: 900px;
+
+    max-width: 100%;
+
+    min-height: 850px;
+
+    margin: 80px auto 0;
+}
+
+
+.eyecandy figure {
+
+    position: absolute;
+
+    margin: 0;
+
+    padding: 12px;
+
+    background: #eee9d8;
+
+    box-shadow:
+        3px 5px 0 rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.eyecandy figure:hover {
+
+    z-index: 10;
+
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+
+    box-shadow:
+        7px 12px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.eyecandy img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: contrast(0.96);
+}
+
+
+.eyecandy figcaption {
+
+    padding-top: 9px;
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    color: var(--muted);
+}
+
+
+/* BIG IMAGE */
+
+.eye-main {
+
+    left: 70px;
+
+    top: 20px;
+
+    width: 540px;
+
+    height: 650px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* SECOND */
+
+.eye-two {
+
+    right: 0;
+
+    top: 100px;
+
+    width: 390px;
+
+    height: 300px;
+
+    transform: rotate(3deg);
+}
+
+
+/* THIRD */
+
+.eye-three {
+
+    right: 70px;
+
+    bottom: 10px;
+
+    width: 290px;
+
+    height: 390px;
+
+    transform: rotate(-4deg);
+}
+
+
+/* ==================================================
+   VIDEOS
+================================================== */
+
+.media-block {
+
+    width: min(900px, 100%);
+
+    margin: 50px auto 0;
+}
+
+
+.media-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    letter-spacing: 0.06em;
+}
+
+
+.media-block video {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 650px;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(50, 48, 42, 0.2);
+
+    background: #ddd7c5;
+}
+
+
+.transition-arrow {
+
+    margin: 55px auto;
+
+    text-align: center;
+
+    font-family: var(--mono);
+
+    font-size: 20px;
+
+    color: var(--muted);
+}
+
+
+.real-world {
+
+    margin-top: 0;
+}
+
+
+/* ==================================================
+   TODO
+================================================== */
+
+.todo {
+
+    padding-top: 120px;
+
+    padding-bottom: 130px;
+}
+
+
+.todo-list {
+
+    max-width: 850px;
+
+    margin: 60px auto 0;
+}
+
+
+.todo-item {
+
+    display: grid;
+
+    grid-template-columns: 40px 240px 1fr;
+
+    align-items: baseline;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+.checkbox {
+
+    font-size: 16px;
+}
+
+
+.todo-item strong {
+
+    font-family: var(--heading);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    letter-spacing: -0.02em;
+}
+
+
+.todo-item small {
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.todo-item.done {
+
+    color: var(--muted);
+}
+
+
+.todo-item.done strong {
+
+    text-decoration: line-through;
+
+    text-decoration-color: var(--red);
+}
+
+
+/* ==================================================
+   GRAVEYARD
+================================================== */
+
+.graveyard {
+
+    padding-top: 120px;
+
+    padding-bottom: 140px;
+
+    background: rgba(232, 227, 211, 0.75);
+
+    border-top: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+
+.graveyard-intro {
+
+    text-align: center;
+
+    margin: 80px auto 70px;
+
+    max-width: 800px;
+}
+
+
+.graveyard-intro h2 {
+
+    font-family: var(--heading);
+
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 400;
+}
+
+
+.graveyard-intro p {
+
+    margin-top: 20px;
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+
+.dead-robot {
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 50px 0;
+
+    border-bottom: 1px solid rgba(50, 48, 42, 0.2);
+}
+
+
+.dead-number {
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.dead-robot h3 {
+
+    font-family: var(--heading);
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+.dead-robot p {
+
+    max-width: 600px;
+
+    margin-top: 7px;
+
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 220px;
+
+    padding-top: 70px;
+
+    padding-bottom: 60px;
+}
+
+
+.footer-left p {
+
+    font-family: var(--heading);
+
+    font-size: 18px;
+
+    letter-spacing: -0.03em;
+}
+
+
+.footer-left span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.footer-cat img {
+
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: contain;
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+
+.footer-links a {
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    color: var(--ink);
+
+    text-decoration: none;
+}
+
+
+.footer-links a:hover {
+
+    color: #a23d36;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 750px) {
+
+
+    header,
+    section,
+    footer {
+
+        width: 82%;
+    }
+
+
+    .red-margin {
+
+        left: 7%;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 100svh;
+    }
+
+
+    .hero-layout {
+
+        height: calc(100svh - 60px);
+
+        min-height: 650px;
+    }
+
+
+    .hero-robot {
+
+        top: 7%;
+
+        left: 50%;
+
+        width: 88%;
+
+        transform:
+            translateX(-50%)
+            rotate(-2deg);
+    }
+
+
+    .hero-name {
+
+        top: 5%;
+
+        right: 0;
+    }
+
+
+    .hero-name h1 {
+
+        font-size: 42px;
+    }
+
+
+    .hero-name p {
+
+        display: none;
+    }
+
+
+    .hero-statement {
+
+        left: 0;
+
+        bottom: 9%;
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .statement {
+
+        font-size: 34px;
+    }
+
+
+    .about-placeholder {
+
+        width: 85%;
+
+        margin-top: 32px;
+
+        margin-left: auto;
+
+        margin-right: 0;
+
+        padding-left: 15px;
+    }
+
+
+    .eyecandy-link {
+
+        margin-top: 28px;
+    }
+
+
+    .mascot {
+
+        width: 110px;
+
+        margin-top: -10px;
+
+        margin-left: 25px;
+    }
+
+
+    .statement-note {
+
+        margin-left: 55%;
+    }
+
+
+    /* CURRENTLY */
+
+    .currently-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .currently h2 {
+
+        font-size: 70px;
+    }
+
+
+    .current-note {
+
+        max-width: 310px;
+
+        margin: auto;
+    }
+
+
+    /* NOTEBOOK */
+
+    .entry {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .entry-number {
+
+        flex-direction: row;
+    }
+
+
+    /* EYECANDY */
+
+    .eyecandy-grid {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+
+    .eyecandy figure,
+    .eye-main,
+    .eye-two,
+    .eye-three {
+
+        position: relative;
+
+        width: 90%;
+
+        height: auto;
+
+        left: auto;
+
+        right: auto;
+
+        top: auto;
+
+        bottom: auto;
+
+        margin: auto;
+    }
+
+
+    .eyecandy figure img {
+
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+
+    /* TODO */
+
+    .todo-item {
+
+        grid-template-columns: 30px 1fr;
+    }
+
+
+    .todo-item small {
+
+        grid-column: 2;
+    }
+
+
+    /* GRAVEYARD */
+
+    .dead-robot {
+
+        grid-template-columns: 50px 1fr;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 35px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ==================================================
+   V3 HOMEPAGE OVERRIDES
+================================================== */
+
+/* EYECANDY link: below scroll indicator, left side */
+.hero .eyecandy-link {
+    position: absolute;
+    left: 0;
+    bottom: -9.5%;
+    display: block;
+    width: fit-content;
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 650;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero .eyecandy-link:hover {
+    opacity: 0.55;
+    transform: translateX(4px);
+}
+
+
+/* Currently thinking */
+.currently {
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+.currently-grid {
+    display: block;
+}
+
+.thinking-list {
+    max-width: 760px;
+    margin: 55px auto 0;
+}
+
+.thinking-list p {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(50, 48, 42, 0.14);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555149;
+}
+
+.thinking-list p:first-child {
+    border-top: 1px solid rgba(50, 48, 42, 0.14);
+}
+
+
+/* Projects */
+.notebook {
+    padding-top: 110px;
+    padding-bottom: 130px;
+    border-top: 1px solid rgba(50, 48, 42, 0.18);
+}
+
+.projects {
+    margin-top: 60px;
+    border-top: 1px solid rgba(50, 48, 42, 0.22);
+}
+
+.project {
+    border-bottom: 1px solid rgba(50, 48, 42, 0.22);
+}
+
+.project-header {
+    display: grid;
+    grid-template-columns: 70px 1fr 35px;
+    align-items: center;
+    width: 100%;
+    padding: 28px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+}
+
+.project-number {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.project-title {
+    font-family: var(--heading);
+    font-size: clamp(25px, 3vw, 42px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    font-weight: 400;
+}
+
+.project-arrow {
+    justify-self: end;
+    font-family: var(--mono);
+    font-size: 22px;
+    transition: transform 0.25s ease;
+}
+
+.project-header:hover .project-title {
+    opacity: 0.6;
+}
+
+.project-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.45s ease;
+}
+
+.project.open .project-body {
+    max-height: 650px;
+    opacity: 1;
+    padding: 10px 0 55px;
+}
+
+.project.open .project-arrow {
+    transform: rotate(45deg);
+}
+
+.project-media {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 227, 211, 0.65);
+    border: 1px dashed rgba(50, 48, 42, 0.25);
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+}
+
+.project-media img,
+.project-media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    object-fit: contain;
+}
+
+.project-info {
+    padding-top: 15px;
+}
+
+.project-kicker {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 30px;
+}
+
+.project-placeholder {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 2;
+    color: #5b574e;
+}
+
+
+/* About placeholder */
+.about-placeholder {
+    width: min(430px, 100%);
+    margin-top: 40px;
+    margin-left: auto;
+    padding-left: 18px;
+    border-left: 1px solid rgba(50, 48, 42, 0.25);
+}
+
+.about-placeholder p {
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+
+/* Mobile */
+@media (max-width: 750px) {
+
+    .hero .eyecandy-link {
+        left: 0;
+        bottom: 7%;
+        font-size: 12px;
+    }
+
+    .thinking-list {
+        width: 100%;
+    }
+
+    .thinking-list p {
+        font-size: 11px;
+    }
+
+    .project-header {
+        grid-template-columns: 45px 1fr 25px;
+        gap: 10px;
+        padding: 24px 0;
+    }
+
+    .project-title {
+        font-size: 25px;
+    }
+
+    .project-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project.open .project-body {
+        max-height: 900px;
+    }
+
+    .project-media,
+    .project-media img,
+    .project-media video {
+        min-height: 230px;
+    }
+
+}
+
+/* ==================================================
+   EYECANDY PAGE
+================================================== */
+
+.eyecandy-page {
+
+    width: min(1100px, 88%);
+
+    margin: 0 auto;
+
+    padding: 60px 0 100px;
+
+}
+
+
+/* ==================================================
+   BACK LINK
+================================================== */
+
+.back-link {
+
+    display: inline-block;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 14px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+
+    margin-bottom: 80px;
+
+    transition: opacity 0.2s ease;
+
+}
+
+
+.back-link:hover {
+
+    opacity: 0.55;
+
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.eyecandy-header {
+
+    max-width: 720px;
+
+    margin-bottom: 100px;
+
+}
+
+
+.eyecandy-label {
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 13px;
+
+    margin: 0 0 18px;
+
+}
+
+
+.eyecandy-header h1 {
+
+    font-family: "Archivo Black", sans-serif;
+
+    font-size: clamp(64px, 10vw, 120px);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.04em;
+
+    margin: 0 0 30px;
+
+}
+
+
+.eyecandy-intro {
+
+    max-width: 540px;
+
+    font-family: "IBM Plex Sans", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    margin: 0 0 28px;
+
+}
+
+
+/* ==================================================
+   EYECANDY ROBOTICS CREDIT
+================================================== */
+
+.eyecandy-credit {
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin: 0;
+
+    padding-left: 14px;
+
+    border-left: 2px solid currentColor;
+
+}
+
+
+.eyecandy-credit a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+.eyecandy-credit a:hover {
+
+    opacity: 0.55;
+
+}
+
+
+/* ==================================================
+   IMAGE GRID
+================================================== */
+
+.eyecandy-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px 50px;
+
+    margin-bottom: 140px;
+
+}
+
+
+.eyecandy-item {
+
+    margin: 0;
+
+}
+
+
+/* Wide image */
+
+.eyecandy-item.wide {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* Image wrapper */
+
+.eyecandy-image-wrap {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/* Images */
+
+.eyecandy-item img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* Small hover movement */
+
+.eyecandy-item:hover img {
+
+    transform: scale(1.015);
+
+}
+
+
+/* Captions */
+
+.eyecandy-item figcaption {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    margin-top: 13px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 13px;
+
+}
+
+
+/* Numbers */
+
+.eyecandy-number {
+
+    opacity: 0.45;
+
+}
+
+
+/* ==================================================
+   VIDEO SECTION
+================================================== */
+
+.eyecandy-videos {
+
+    margin-bottom: 140px;
+
+}
+
+
+.eyecandy-section-heading {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 30px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.eyecandy-section-heading .eyecandy-label {
+
+    margin: 0;
+
+}
+
+
+.eyecandy-section-note {
+
+    font-family: "IBM Plex Sans", sans-serif;
+
+    font-size: 15px;
+
+    margin: 0;
+
+    opacity: 0.7;
+
+}
+
+
+/* ==================================================
+   VIDEO BLOCK
+================================================== */
+
+.video-block {
+
+    margin-bottom: 80px;
+
+}
+
+
+.video-block video {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 950px;
+
+    height: auto;
+
+}
+
+
+/* Video caption */
+
+.video-meta {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    margin-top: 13px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 13px;
+
+}
+
+
+.video-number {
+
+    opacity: 0.45;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.eyecandy-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 30px;
+
+    border-top: 1px solid currentColor;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 13px;
+
+}
+
+
+.eyecandy-footer p {
+
+    margin: 0;
+
+}
+
+
+.eyecandy-footer a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+
+    .eyecandy-page {
+
+        width: 88%;
+
+        padding-top: 35px;
+
+    }
+
+
+    .back-link {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .eyecandy-header {
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .eyecandy-header h1 {
+
+        font-size: 64px;
+
+    }
+
+
+    .eyecandy-intro {
+
+        font-size: 16px;
+
+    }
+
+
+    .eyecandy-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        margin-bottom: 100px;
+
+    }
+
+
+    .eyecandy-item.wide {
+
+        grid-column: auto;
+
+    }
+
+
+    .eyecandy-section-heading {
+
+        display: block;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .eyecandy-section-note {
+
+        margin-top: 15px;
+
+    }
+
+
+    .video-block {
+
+        margin-bottom: 60px;
+
+    }
+
+
+    .eyecandy-footer {
+
+        display: block;
+
+    }
+
+
+    .eyecandy-footer a {
+
+        display: inline-block;
+
+        margin-top: 15px;
+
+    }
+
+}
+
