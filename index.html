@@ -1,14 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Harsh Sagare — Robotics</title>
 
@@ -17,261 +13,166 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet"
     >
 
     <link rel="stylesheet" href="style.css">
-
-    <script defer src="script.js"></script>
-
 </head>
-
 
 <body>
 
-<div class="page">
-
-    <!-- notebook margin -->
-    <div class="red-margin"></div>
-
-
-    <!-- ==================================================
-         HERO
-    =================================================== -->
-
-    <header class="hero">
-
-        <div class="top-line">
-
-            <span>
-                HARSH'S ROBOT NOTEBOOK
-            </span>
-
-            <span>
-                p. 01
-            </span>
-
+<nav class="navbar">
+    <div class="nav-inner">
+        <a class="nav-logo" href="index.html">harsh sagare</a>
+        <div class="nav-right">
+            <a href="eyecandy.html">eyecandy</a>
         </div>
+    </div>
+</nav>
 
+<main class="container">
 
-        <div class="hero-layout">
+    <img
+        class="profile-img"
+        src="images/santraa.png"
+        alt="santraa, the SRA mascot"
+    >
 
+    <div class="intro-text">
+        <p>
+            hi! i'm <strong>harsh</strong>. i work on robotics
+            &amp; intelligence. used to design robots,
+            now trying to make them smarter.
+        </p>
 
-            <!-- SO-100 + MASCOT -->
-            <div class="hero-robot">
+        <p>
+            <strong>you give me a robot, i'll make it work.</strong>
+            probably.
+        </p>
 
-                <img
-                    class="so100-image"
-                    src="images/dualso100.png"
-                    alt="Dual SO-100 robotic arms"
-                >
-
-                <span class="image-note">
-                    dual SO-100
-                </span>
-
-                <div class="mascot">
-
-                    <img
-                        src="images/santraa.png"
-                        alt="SRA mascot"
-                    >
-
-                    <span>mascot</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- NAME -->
-            <div class="hero-name">
-
-                <h1>
-                    HARSH<br>
-                    SAGARE
-                </h1>
-
-                <p>
-                    robotics<br>
-                    & intelligence
-                </p>
-
-            </div>
-
-
-            <!-- MAIN STATEMENT -->
-            <div class="hero-statement">
-
-                <p class="statement">
-                    YOU GIVE ME A<br>
-                    ROBOT, I'LL MAKE<br>
-                    IT WORK.
-                </p>
-
-                <p class="statement-note">
-                    probably.
-                </p>
-
-                <div class="about-placeholder">
-                    <p>
-                        used to design robots. now trying to make them smarter.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="hero-scroll">
-                ↓ scroll around
-            </div>
-
-            <a class="eyecandy-link" href="eyecandy.html">
-                time at eyecandy →
-            </a>
-
-
-        </div>
-
-    </header>
-
-
-
-    <!-- ==================================================
-         CURRENTLY
-    =================================================== -->
-
-    <section class="currently">
-
-        <div class="section-heading">
-            <span>currently thinking about</span>
-            <span class="line"></span>
-            <span>01</span>
-        </div>
-
-        <div class="thinking-list">
-
-            <p>&gt; robot learning</p>
-            <p>&gt; manipulation</p>
-            <p>&gt; bipedal locomotion</p>
-            <p>&gt; quadrupeds</p>
-            <p>&gt; mechanisms</p>
-            <p>&gt; robot control</p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         NOTEBOOK
-    =================================================== -->
-
-    <section class="notebook">
-
-        <div class="section-heading">
-            <span>projects</span>
-            <span class="line"></span>
-            <span>things i've actually built</span>
-        </div>
-
-        <div class="projects">
-
-            <article class="project">
-                <button class="project-header" type="button" aria-expanded="false">
-                    <span class="project-number">01</span>
-                    <span class="project-title">robot learning</span>
-                    <span class="project-arrow">+</span>
-                </button>
-
-                <div class="project-body">
-                    <div class="project-media">
-    			<video autoplay muted loop playsinline>
-        		    <source src="videos/robot-learning.mp4" type="video/mp4">
-    			</video>
-		</div>
-                    <div class="project-info">
-                        <p class="project-kicker">manipulation / 2026</p>
-                        <p class="project-placeholder">
-    &gt; built a tabletop manipulation setup around the SO100<br>
-    &gt; collected demonstrations through leader-follower teleoperation<br>
-    &gt; trained ACT and explored SmolVLA for imitation learning<br>
-    &gt; worked on getting learned policies from simulation onto a real robot
-</p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project">
-                <button class="project-header" type="button" aria-expanded="false">
-                    <span class="project-number">02</span>
-                    <span class="project-title">open duck mini</span>
-                    <span class="project-arrow">+</span>
-                </button>
-
-                <div class="project-body">
-                    <div class="project-media">
-    			<video autoplay muted loop playsinline>
-        		    <source src="videos/open-duck.mp4" type="video/mp4">
-    			</video>
-		</div>
-                    <div class="project-info">
-                        <p class="project-kicker">biped / 2025</p>
-                        <p class="project-placeholder">
-    &gt; built and assembled a small 3D-printed biped<br>
-    &gt; ran learned locomotion policies directly on a Raspberry Pi<br>
-    &gt; worked on getting a walking policy from simulation onto hardware<br>
-    &gt; spent a lot of time making two legs cooperate
-</p>
-                    </div>
-                </div>
-            </article>
-
-            
-
-        </div>
-
-    </section>
-
-
-<footer>
-
-
-        <div class="footer-left">
-
-            <p>
-                HARSH SAGARE
+        <div class="principle">
+            <p class="principle-label">a principle i try to live by:</p>
+            <p class="principle-quote">
+                if you have the means to make a difference,
+                you have a moral obligation to try.
             </p>
-
-            <span>
-                more robots soon.
-            </span>
-
         </div>
 
+        <p class="eyecandy-link">
+            <a href="eyecandy.html">time at eyecandy →</a>
+        </p>
+    </div>
 
+    <section class="section">
+        <h4>currently thinking about:</h4>
+        <ul>
+            <li>robot learning</li>
+            <li>manipulation</li>
+            <li>bipedal locomotion</li>
+            <li>quadrupeds</li>
+            <li>mechanisms</li>
+            <li>robot control</li>
+        </ul>
+    </section>
 
+    <section class="section">
+        <h2>projects</h2>
+        <p class="section-note">things i've actually built</p>
 
+        <article class="project">
+            <h3>
+                <span class="project-number">01</span>
+                building umi
+            </h3>
+            <p class="project-kicker">manipulation / 2026</p>
+            <ul>
+                <li>building a handheld UMI (Universal Manipulation Interface) gripper for collecting human demonstrations for robot learning</li>
+                <li>exploring the mechanical design and actuation mechanisms behind the UMI, comparing design approaches such as UMI and TRUMI</li>
+                <li>working towards a handheld interface for capturing synchronized motion and visual data during manipulation</li>
+            </ul>
 
-        <div class="footer-links">
+            <img
+                class="project-image"
+                src="images/umi.png"
+                alt="UMI handheld gripper"
+                loading="lazy"
+            >
+        </article>
 
-            <a href="#">
-                github
-            </a>
+        <article class="project">
+            <h3>
+                <span class="project-number">02</span>
+                quest 3 teleoperation
+            </h3>
+            <p class="project-kicker">teleoperation / 2026</p>
+            <ul>
+                <li>integrated Meta Quest 3 controllers with the I2RT YAM robotic arm for motion-based teleoperation</li>
+                <li>implemented end-effector control using inverse kinematics with joint-limit and velocity constraints</li>
+                <li>mapped controller inputs to arm motion and gripper control</li>
+                <li>built a synchronized 30 Hz demonstration recorder with LeRobot dataset export</li>
+            </ul>
+        </article>
 
-            <a href="#">
-                linkedin
-            </a>
+        <article class="project">
+            <h3>
+                <span class="project-number">03</span>
+                robot learning
+            </h3>
+            <p class="project-kicker">manipulation / 2026</p>
+            <ul>
+                <li>built a tabletop manipulation setup around the SO100</li>
+                <li>collected demonstrations through leader-follower teleoperation</li>
+                <li>trained ACT and explored SmolVLA for imitation learning</li>
+                <li>worked on getting learned policies from simulation onto a real robot</li>
+            </ul>
 
+            <video autoplay muted loop playsinline>
+                <source src="videos/robot-learning.mp4" type="video/mp4">
+            </video>
+        </article>
+
+        <article class="project">
+            <h3>
+                <span class="project-number">04</span>
+                open duck mini
+            </h3>
+            <p class="project-kicker">biped / 2025</p>
+            <ul>
+                <li>built and assembled a small 3D-printed biped</li>
+                <li>ran learned locomotion policies directly on a Raspberry Pi</li>
+                <li>worked on getting a walking policy from simulation onto hardware</li>
+                <li>spent a lot of time making two legs cooperate</li>
+            </ul>
+
+            <video autoplay muted loop playsinline>
+                <source src="videos/open-duck.mp4" type="video/mp4">
+            </video>
+        </article>
+    </section>
+
+    <div class="contact">
+        <h2>contact</h2>
+        <div class="contact-links">
+            <a href="mailto:sagareharshs@gmail.com">email</a>
+            <span class="contact-separator">|</span>
+            <a href="#">github</a>
+            <span class="contact-separator">|</span>
+            <a
+                href="https://x.com/HarshSagare"
+                target="_blank"
+                rel="noopener noreferrer"
+            >x</a>
+            <span class="contact-separator">|</span>
+            <a href="#">linkedin</a>
         </div>
+    </div>
 
-
+    <footer class="footer">
+        <p>more robots soon.</p>
     </footer>
 
-
-</div>
+</main>
 
 </body>
 </html>
