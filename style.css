@@ -519,3 +519,28 @@ a:hover {
     object-fit: contain;
 }
 
+/* UMI project media row (image + video side by side) */
+
+.project-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.project-media .project-image {
+    flex: 1 1 240px;
+    max-width: 55%;
+    width: auto;
+    margin: 0;
+}
+
+.project-media video {
+    flex: 1 1 200px;
+    min-width: 180px;
+    max-height: 420px;
+    width: auto;
+    margin: 0;
+}
+
